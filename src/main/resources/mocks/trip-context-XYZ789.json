@@ -1,0 +1,21 @@
+{
+  "booking_id": "XYZ789",
+  "passengers": [
+    { "passenger_id": "P1", "name": "Pedro Rojas", "type": "ADULT",
+      "email": "pedro.rojas@example.com", "phone": "+56 9 1234 5678",
+      "document_id": "11.222.333-4", "loyalty_tier": "SILVER" }
+  ],
+  "segments": [
+    { "segment_id": "S1", "flight_number": "LA500", "origin": "SCL",
+      "destination": "LIM", "date": "2026-09-15",
+      "scheduled_departure": "14:30", "scheduled_arrival": "17:55" },
+    { "segment_id": "S2", "flight_number": "LA2410", "origin": "LIM",
+      "destination": "MEX", "date": "2026-09-15",
+      "scheduled_departure": "19:05", "scheduled_arrival": "23:40" }
+  ],
+  "fare_conditions": { "changeable": true, "refundable": false,
+                       "fare_family": "LIGHT", "change_penalty_amount": 0 },
+  "_meta": { "retrieved_at": "2026-09-15T11:02:31Z",
+             "completeness": "COMPLETE",
+             "missing_fields": [] }
+}

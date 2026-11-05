@@ -48,6 +48,21 @@ zona horaria); `delay_minutes` = mayor retraso; `completeness` desconocido = `PA
 - **Qué ve el pasajero:** estado, derecho con su política y siguiente paso; no ve datos personales ni info que no este verificada.
 - **Fuentes contradictorias:** descarto las fuentes degradadas; si una confiable contradice un retraso posterior, lo derivo.
 
+## Capa de aplicación
+
+| Clase | Para qué |
+|---|---|
+| `port/in/AssessDisruptionUseCase` | Interfaz del caso de uso "evaluar una reserva".|
+| `port/in/GetPassengerNoticeUseCase` | Interfaz del caso de uso para la "vista del pasajero" |
+| `port/out/TripContextPort` | Contrato de la tool `get_trip_context` |
+| `port/out/OperationalEventsPort` | Contrato de la tool `get_operational_events` |
+| `port/out/PolicyRulesPort` | Contrato de la tool `get_policy_rules` |
+| `port/out/EligibleOptionsPort` | Contrato de la tool `get_eligible_options` |
+| `port/out/ExternalToolException` | Una tool falló o rompió el contrato, así que la evaluación se detiene y la modelo acá tb |
+| `exception/BookingNotFoundException` | La reserva no existe (404) asi que acá la modelo |
+| `service/DisruptionAssessmentService` | **El orquestador.** Implementa los dos casos de uso: pide los datos a los puertos y llama al dominio en orden. **No contiene reglas de negocio** |
+
+
 ## 3. Decisiones y alternativas descartadas
 
 | Decisión | Descartado | Por qué |
